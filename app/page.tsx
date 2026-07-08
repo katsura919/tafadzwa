@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       <SiteNav />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <Receipts />
         <Problem />

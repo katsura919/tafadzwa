@@ -198,7 +198,6 @@
   }
   body {
     @apply relative antialiased bg-background text-foreground;
-    overflow-x: clip;
   }
   ::selection {
     background: var(--violet);
