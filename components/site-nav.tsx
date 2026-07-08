@@ -21,14 +21,14 @@ export function SiteNav() {
   }, [])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3">
+    <header className="fixed inset-x-0 top-0 z-50 md:px-4 md:pt-3">
       <div className="mx-auto w-full max-w-5xl">
         <nav
           className={cn(
-            "flex w-full items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 ease-out",
+            "flex w-full items-center gap-4 px-4 py-3 transition-all duration-500 ease-out md:py-2.5 md:rounded-full",
             scrolled || open
-              ? "border border-border bg-background shadow-[0_10px_30px_-16px_rgba(27,22,38,0.35)]"
-              : "border border-transparent"
+              ? "border-b border-border bg-background md:border md:shadow-[0_10px_30px_-16px_rgba(27,22,38,0.35)]"
+              : "border-b border-transparent md:border md:border-transparent"
           )}
         >
           <a href="#top" onClick={() => setOpen(false)} className="pl-2">
@@ -81,7 +81,7 @@ export function SiteNav() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-2 rounded-3xl border border-border bg-background p-3 shadow-[0_20px_50px_-20px_rgba(27,22,38,0.4)] md:hidden"
+              className="mx-3 mt-2 rounded-3xl border border-border bg-background p-3 shadow-[0_20px_50px_-20px_rgba(27,22,38,0.4)] md:hidden"
             >
               <ul className="flex flex-col">
                 {nav.map((n) => (
