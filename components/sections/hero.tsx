@@ -27,7 +27,7 @@ export function Hero() {
     >
       <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
         {/* Left — copy */}
-        <div className="text-center lg:text-left">
+        <div className="min-w-0 text-center lg:text-left">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export function Hero() {
         </div>
 
         {/* Right — live activity visual */}
-        <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+        <div className="relative mx-auto w-full min-w-0 max-w-sm lg:max-w-none">
           {/* ambient glow */}
           <div
             aria-hidden
@@ -120,7 +120,7 @@ export function Hero() {
                     <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg ${tone}`}>
                       <Icon className="h-4 w-4" />
                     </span>
-                    <span className="truncate text-[13px] font-medium text-foreground">
+                    <span className="min-w-0 truncate text-[13px] font-medium text-foreground">
                       {a.text}
                     </span>
                     <span
