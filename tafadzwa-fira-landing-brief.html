@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Brief · Tafadzwa Fira · meribuilds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EF;
+    --paper-2:#FFFFFF;
+    --ink:#171512;
+    --ink-soft:#4A453D;
+    --line:#E0DCD2;
+    --line-strong:#CFC9BC;
+    /* meribuilds system accent (blue = spec / build) */
+    --sys:#1E4FD8;
+    --sys-wash:#EAEFFC;
+    /* client brand direction (violet) */
+    --client:#6D28D9;
+    --client-2:#8B5CF6;
+    --client-wash:#F1EBFB;
+    /* status */
+    --ok:#2F7A4E;
+    --ok-wash:#E7F1EA;
+    --wait:#A9691A;
+    --wait-wash:#F6EEDF;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:40px 24px 96px;}
+
+  .mono{font-family:"Space Mono",ui-monospace,monospace;}
+  .eyebrow{
+    font-family:"Space Mono",monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--sys);
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    border:1.5px solid var(--ink);
+    border-radius:var(--radius);
+    background:var(--paper-2);
+    padding:26px 28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .brandline{
+    display:flex;align-items:center;gap:10px;
+    font-family:"Space Mono",monospace;
+    font-size:13px;letter-spacing:.06em;
+    color:var(--ink-soft);
+  }
+  .brandline b{color:var(--ink);font-weight:700;}
+  .brandline .dot{width:6px;height:6px;border-radius:50%;background:var(--sys);display:inline-block;}
+  .doc-title{
+    font-family:"Fraunces",serif;
+    font-weight:600;
+    font-size:clamp(30px,6vw,50px);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin:14px 0 4px;
+  }
+  .doc-sub{
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(18px,3.4vw,23px);
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .meta-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    margin-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .meta-grid div{
+    padding:12px 14px 4px 0;
+    border-right:1px solid var(--line);
+  }
+  .meta-grid div:last-child{border-right:none;padding-right:0;}
+  .meta-k{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);}
+  .meta-v{font-size:14px;font-weight:600;margin-top:3px;}
+
+  /* ---------- Section ---------- */
+  section{margin-top:44px;}
+  .sec-head{
+    display:flex;align-items:baseline;gap:14px;
+    padding-bottom:10px;
+    border-bottom:1.5px solid var(--ink);
+    margin-bottom:20px;
+  }
+  .sec-num{
+    font-family:"Space Mono",monospace;
+    font-weight:700;font-size:13px;
+    color:var(--sys);
+    letter-spacing:.05em;
+  }
+  .sec-title{
+    font-family:"Fraunces",serif;
+    font-weight:600;
+    font-size:clamp(20px,3.6vw,26px);
+    letter-spacing:-.01em;
+    margin:0;
+  }
+  .sec-title small{
+    display:block;
+    font-family:"Inter",sans-serif;
+    font-weight:400;font-size:13.5px;
+    color:var(--ink-soft);
+    letter-spacing:0;
+    margin-top:2px;
+  }
+
+  p{margin:0 0 14px;}
+  .lead{font-size:17px;}
+  .muted{color:var(--ink-soft);}
+
+  /* Cards */
+  .card{
+    background:var(--paper-2);
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .stack > * + *{margin-top:14px;}
+
+  /* Field label chips */
+  .field{margin-bottom:18px;}
+  .field:last-child{margin-bottom:0;}
+  .flabel{
+    font-family:"Space Mono",monospace;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--sys);
+    margin-bottom:5px;
+  }
+
+  /* Offer list */
+  .offer{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .offer .card{padding:18px 20px;}
+  .offer h4{
+    font-family:"Fraunces",serif;font-weight:600;font-size:18px;margin:0 0 6px;
+  }
+  .offer .tag{
+    display:inline-block;font-family:"Space Mono",monospace;font-size:10px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+    border:1px solid var(--line-strong);border-radius:20px;padding:2px 9px;margin-bottom:9px;
+  }
+  .offer p{font-size:14px;margin:0;color:var(--ink-soft);}
+
+  ul.clean{list-style:none;padding:0;margin:0;}
+  ul.clean li{
+    position:relative;padding-left:26px;margin-bottom:10px;font-size:15px;
+  }
+  ul.clean li::before{
+    content:"";position:absolute;left:0;top:9px;
+    width:9px;height:9px;border-radius:2px;
+    background:var(--sys);
+  }
+  ul.clean.violet li::before{background:var(--client);}
+
+  /* Receipts band */
+  .receipts{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .receipts .cell{background:var(--paper-2);padding:22px 18px;}
+  .receipts .num{
+    font-family:"Fraunces",serif;font-weight:900;
+    font-size:clamp(30px,6vw,44px);line-height:1;
+    letter-spacing:-.02em;
+  }
+  .receipts .lab{
+    font-family:"Space Mono",monospace;font-size:10.5px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+    margin-top:8px;
+  }
+
+  /* Quote */
+  blockquote{
+    margin:0;padding:16px 20px;
+    border-left:3px solid var(--client);
+    background:var(--client-wash);
+    border-radius:0 10px 10px 0;
+    font-family:"Fraunces",serif;font-size:16px;font-style:italic;
+  }
+
+  /* Copy blocks (draft copy) */
+  .copyblock{
+    background:#1c1a16;color:#F6F4EF;border-radius:var(--radius);
+    padding:20px 22px;font-size:15px;
+  }
+  .copyblock h4{
+    font-family:"Space Mono",monospace;font-weight:700;font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:#C7B8F0;margin:0 0 10px;
+  }
+  .copyblock .hero-h{font-family:"Fraunces",serif;font-weight:600;font-size:24px;line-height:1.1;margin:0 0 8px;}
+  .copyblock p{color:#D8D3C8;margin:0 0 14px;}
+  .copyblock p:last-child{margin-bottom:0;}
+  .copyblock .alt{font-size:13px;color:#9E988B;font-family:"Space Mono",monospace;}
+
+  /* Swatches */
+  .swatches{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+  .sw{border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;width:120px;}
+  .sw .chip{height:52px;}
+  .sw .info{padding:7px 10px;font-family:"Space Mono",monospace;font-size:10.5px;color:var(--ink-soft);}
+  .sw .info b{display:block;color:var(--ink);font-size:11px;letter-spacing:.03em;}
+
+  /* Status tags */
+  .status{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:"Space Mono",monospace;font-size:11px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;
+    padding:3px 10px;border-radius:20px;
+  }
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;}
+  .s-ok{background:var(--ok-wash);color:var(--ok);}
+  .s-ok::before{background:var(--ok);}
+  .s-wait{background:var(--wait-wash);color:var(--wait);}
+  .s-wait::before{background:var(--wait);}
+
+  /* Punch list */
+  .punch{list-style:none;padding:0;margin:0;}
+  .punch li{
+    display:flex;gap:14px;align-items:flex-start;
+    padding:15px 0;border-bottom:1px solid var(--line);
+  }
+  .punch li:last-child{border-bottom:none;}
+  .punch .box{
+    flex:0 0 auto;width:20px;height:20px;border:1.5px solid var(--wait);
+    border-radius:5px;margin-top:2px;
+  }
+  .punch .body b{display:block;font-size:15px;margin-bottom:2px;}
+  .punch .body span{font-size:13.5px;color:var(--ink-soft);}
+
+  /* Two col */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+  a{color:var(--sys);text-decoration:none;border-bottom:1px solid var(--sys-wash);}
+  a:hover{border-bottom-color:var(--sys);}
+
+  .foot{
+    margin-top:56px;padding-top:20px;border-top:1.5px solid var(--ink);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-family:"Space Mono",monospace;font-size:11.5px;color:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+
+  @media (max-width:640px){
+    .meta-grid{grid-template-columns:1fr 1fr;}
+    .meta-grid div{border-bottom:1px solid var(--line);padding-right:14px;}
+    .meta-grid div:nth-child(2n){border-right:none;}
+    .offer{grid-template-columns:1fr;}
+    .receipts{grid-template-columns:1fr 1fr;}
+    .two{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;}}
+  @media print{
+    body{background:#fff;}
+    .copyblock{background:#f0eee9;color:#171512;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .copyblock p{color:#4A453D;} .copyblock .hero-h{color:#171512;} .copyblock h4{color:#6D28D9;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="brandline"><span class="dot"></span><b>meribuilds</b> &nbsp;·&nbsp; AI workflows without the complication</div>
+    <h1 class="doc-title">Landing Page Build Brief</h1>
+    <p class="doc-sub">Tafadzwa Fira &middot; CRM Cleanup &amp; Automation for coaches and founders</p>
+    <div class="meta-grid">
+      <div><div class="meta-k">Prepared for</div><div class="meta-v">Web Dev</div></div>
+      <div><div class="meta-k">Date</div><div class="meta-v">Jul 7, 2026</div></div>
+      <div><div class="meta-k">Deliverable</div><div class="meta-v">1 landing page</div></div>
+      <div><div class="meta-k">Status</div><div class="meta-v">Build-ready · 7 open items</div></div>
+    </div>
+  </header>
+
+  <!-- 01 POSITIONING -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">The page in one line<small>What the visitor should understand in the first three seconds.</small></h2>
+    </div>
+    <p class="lead">Tafadzwa helps coaches, consultants, and service-based founders fix the CRM chaos that's costing them leads and clients.</p>
+    <p class="muted">Her whole promise sits on one phrase she gave us in the intake: <strong>leads slipping through the cracks</strong>. That's the emotional core of the page. The hero should name that pain fast, then position her as the person who closes the gap.</p>
+  </section>
+
+  <!-- 02 GOAL + CTA -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Page goal &amp; call to action<small>One job for this page. Don't dilute it.</small></h2>
+    </div>
+    <div class="card stack">
+      <div class="field">
+        <div class="flabel">Single job</div>
+        Get the right prospect to <strong>book a call</strong>. No cart, no checkout. This is a lead-gen page.
+      </div>
+      <div class="two">
+        <div class="field" style="margin:0;">
+          <div class="flabel">Primary button</div>
+          <strong>Book a call</strong> &nbsp;<span class="status s-wait">needs booking link</span>
+          <div class="muted" style="font-size:13.5px;margin-top:6px;">No Calendly/GHL calendar link was provided. Placeholder the button until Tafadzwa sends one.</div>
+        </div>
+        <div class="field" style="margin:0;">
+          <div class="flabel">Secondary button</div>
+          <strong>Email me</strong> &nbsp;<span class="status s-ok">ready</span>
+          <div class="muted" style="font-size:13.5px;margin-top:6px;">Links to <a href="mailto:firatafadzwa@gmail.com">firatafadzwa@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 AUDIENCE + PROBLEM -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Who it's for &amp; the problem<small>Use these to write the pain section above the offer.</small></h2>
+    </div>
+    <div class="card stack">
+      <div class="field">
+        <div class="flabel">Dream client</div>
+        A coach or consultant with real clients coming in, who wants a CRM built right, or whose CRM has become a half-built mess they're too busy to fix themselves.
+      </div>
+      <div class="field">
+        <div class="flabel">The problem in their words</div>
+        <blockquote>"These people are in limbo until I can figure it out." &nbsp;/&nbsp; "Are you able to manage a CRM? I'm about to launch a media campaign and need email capture and automation handled."</blockquote>
+      </div>
+      <div class="field" style="margin:0;">
+        <div class="flabel">What they already tried</div>
+        Built the CRM themselves, hired a cheap one-off freelancer, or followed a template or tutorial. It worked for a while, then never got finished or maintained.
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 OFFER -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">The offer<small>Four services, laddered from one-off to retainer.</small></h2>
+    </div>
+    <div class="offer">
+      <div class="card">
+        <span class="tag">01 · One-off</span>
+        <h4>CRM Audit &amp; Cleanup</h4>
+        <p>Find what's broken: dedupe, tag consistency, data hygiene.</p>
+      </div>
+      <div class="card">
+        <span class="tag">02 · Project</span>
+        <h4>CRM Build &amp; Setup</h4>
+        <p>GoHighLevel, HubSpot, or the client's platform of choice.</p>
+      </div>
+      <div class="card">
+        <span class="tag">03 · Project</span>
+        <h4>Automation &amp; Workflows</h4>
+        <p>Follow-up sequences, tagging triggers, reminders, nurture flows.</p>
+      </div>
+      <div class="card">
+        <span class="tag">04 · Retainer</span>
+        <h4>Ongoing CRM Management</h4>
+        <p>The "run it" option: CRM inbox management, calendar and booking setup.</p>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:16px;font-size:14px;"><span class="status s-wait">no pricing yet</span> &nbsp; The price field came back as a phone number. Until Tafadzwa confirms pricing, present each service with a "Book a call" prompt rather than a number.</p>
+  </section>
+
+  <!-- 05 INCLUDED -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">What's included<small>Feature list for the "what you get" block.</small></h2>
+    </div>
+    <ul class="clean">
+      <li><strong>CRM Audit</strong> — full review of current setup, contacts, and tags to find what's broken.</li>
+      <li><strong>Data Cleanup</strong> — deduplication, bad-email removal, consistent tagging across all contacts.</li>
+      <li><strong>CRM Build / Setup</strong> — pipeline stages, contact fields, and structure built out properly.</li>
+      <li><strong>Automation &amp; Workflows</strong> — follow-up sequences, reminders, tagging triggers, nurture campaigns.</li>
+      <li><strong>Inbox &amp; Calendar Setup</strong> — unified messaging plus booking/calendar integration inside the CRM.</li>
+      <li><strong>Reporting</strong> — basic dashboards so the client sees what's working.</li>
+      <li><strong>Documentation / SOPs</strong> — a simple guide so the client or their team knows how the system runs.</li>
+    </ul>
+  </section>
+
+  <!-- 06 OUTCOMES -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">The outcome<small>Benefit-led copy for the "after we work together" block.</small></h2>
+    </div>
+    <ul class="clean violet">
+      <li>See every lead and contact in one clean system, no duplicates, no missing data.</li>
+      <li>Trust that follow-ups happen automatically, so no lead falls through.</li>
+      <li>Know exactly where every prospect stands in the pipeline at a glance.</li>
+      <li>Spend less time on manual admin.</li>
+      <li>Scale outreach and bookings with confidence.</li>
+    </ul>
+  </section>
+
+  <!-- 07 PROOF -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">07</span>
+      <h2 class="sec-title">Proof &amp; receipts<small>Real numbers from a live GoHighLevel cleanup. Lead with these.</small></h2>
+    </div>
+    <div class="receipts">
+      <div class="cell"><div class="num">935</div><div class="lab">Contacts cleaned</div></div>
+      <div class="cell"><div class="num">312</div><div class="lab">Duplicates removed</div></div>
+      <div class="cell"><div class="num">0</div><div class="lab">Bad emails left</div></div>
+      <div class="cell"><div class="num">100%</div><div class="lab">Tag consistency</div></div>
+    </div>
+    <div class="two" style="margin-top:16px;">
+      <div class="card" style="padding:16px 18px;">
+        <div class="flabel">Testimonials</div>
+        <p style="margin:0;font-size:14px;" class="muted">Only VA-related testimonials exist so far. <span class="status s-wait">decision needed</span> Recommendation: run one or two now, reframed around reliability and follow-through, and swap in CRM-specific ones as they come.</p>
+      </div>
+      <div class="card" style="padding:16px 18px;">
+        <div class="flabel">Certification</div>
+        <p style="margin:0;font-size:14px;" class="muted">Certificate to be sent by email. <span class="status s-wait">awaiting file</span> Once received, place as a small trust badge, not a hero element.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 BRAND -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">08</span>
+      <h2 class="sec-title">Brand direction<small>No logo yet. We set the look. Client picked the color.</small></h2>
+    </div>
+    <div class="card stack">
+      <div class="field">
+        <div class="flabel">Voice</div>
+        Direct, with a little humor. Confident, plain-spoken, no jargon. She solves messes, so the tone should feel like a competent person who's seen it all and isn't fazed.
+      </div>
+      <div class="field">
+        <div class="flabel">Color · client's pick</div>
+        Deep purple / violet is the anchor. Suggested working palette below, open to refinement.
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#6D28D9;"></div><div class="info"><b>#6D28D9</b>Primary violet</div></div>
+          <div class="sw"><div class="chip" style="background:#8B5CF6;"></div><div class="info"><b>#8B5CF6</b>Accent</div></div>
+          <div class="sw"><div class="chip" style="background:#F1EBFB;"></div><div class="info"><b>#F1EBFB</b>Wash / bg</div></div>
+          <div class="sw"><div class="chip" style="background:#1B1626;"></div><div class="info"><b>#1B1626</b>Ink</div></div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="flabel">Logo &amp; name</div>
+        No business name and no logo yet. <span class="status s-wait">name pending</span> Build with a clean wordmark from her name (e.g. "Tafadzwa Fira" or a short mark) until she decides on a business name.
+      </div>
+      <div class="field" style="margin:0;">
+        <div class="flabel">"Avoid" note · needs a quick confirm</div>
+        <p style="margin:0;font-size:14px;" class="muted">Her answer to "anything to avoid" was <em>"slipping through the cracks."</em> That reads like her core pain point, not a design constraint. Treat it as a headline hook, not a thing to steer clear of, but confirm with her before launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 DRAFT COPY -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">09</span>
+      <h2 class="sec-title">Ready-to-use copy<small>Draft, in her voice. Dev can drop these in as-is.</small></h2>
+    </div>
+    <div class="copyblock">
+      <h4>Hero</h4>
+      <div class="hero-h">Your leads are slipping through the cracks. I build the CRM that catches them.</div>
+      <p>CRM audits, clean builds, and automation for coaches, consultants, and service-based founders who are too busy running the business to fix the mess behind it.</p>
+      <p class="alt">alt: "Your CRM is a half-built mess. Good thing that's my favorite kind of project."</p>
+    </div>
+    <div class="two" style="margin-top:16px;">
+      <div class="copyblock">
+        <h4>CTA band</h4>
+        <div class="hero-h" style="font-size:20px;">Stop losing leads you already paid for.</div>
+        <p>Book a call and I'll show you exactly where your pipeline is leaking.</p>
+      </div>
+      <div class="copyblock">
+        <h4>Proof lead-in</h4>
+        <div class="hero-h" style="font-size:20px;">935 contacts. Zero chaos.</div>
+        <p>One recent GoHighLevel cleanup: 312 duplicates gone, bad emails cleared, 100% tag consistency.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 ASSETS -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">10</span>
+      <h2 class="sec-title">Assets, links &amp; setup<small>What we have and what the page connects to.</small></h2>
+    </div>
+    <div class="two">
+      <div class="card">
+        <div class="flabel">Links to include</div>
+        <ul class="clean" style="margin-top:4px;">
+          <li><a href="https://www.linkedin.com/in/tafadzwa-fira-24816136a">LinkedIn profile</a></li>
+          <li><a href="https://www.facebook.com/share/1Er4pxafDp/">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="flabel">Build setup</div>
+        <ul class="clean" style="margin-top:4px;">
+          <li>Domain: subdomain / free URL is fine.</li>
+          <li>Timeline: no deadline, no rush.</li>
+          <li>Client must be able to <strong>edit copy herself later</strong>, so build on an editor-friendly platform.</li>
+          <li>Photos: phone-only, no logo. meribuilds to supply visuals.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 PUNCH LIST -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">11</span>
+      <h2 class="sec-title">Open items before launch<small>Chase these with Tafadzwa. The page can be built around them, not without them.</small></h2>
+    </div>
+    <ul class="punch">
+      <li><span class="box"></span><span class="body"><b>Booking link</b><span>Calendly or GHL calendar URL for the primary "Book a call" button.</span></span></li>
+      <li><span class="box"></span><span class="body"><b>Pricing decision</b><span>Confirm whether prices go on the page or stay "book a call." Price field came back blank.</span></span></li>
+      <li><span class="box"></span><span class="body"><b>Business / wordmark name</b><span>Use her name for now, or confirm a business name to design the mark around.</span></span></li>
+      <li><span class="box"></span><span class="body"><b>Testimonials call</b><span>Approve using VA testimonials (reframed) or hold for CRM-specific ones.</span></span></li>
+      <li><span class="box"></span><span class="body"><b>Certificate file</b><span>She'll send by email. Add as a small trust badge once received.</span></span></li>
+      <li><span class="box"></span><span class="body"><b>Visuals</b><span>meribuilds to source or create imagery, since assets are phone photos only.</span></span></li>
+      <li><span class="box"></span><span class="body"><b>Confirm the "avoid" answer</b><span>Verify "slipping through the cracks" is a hook, not a restriction.</span></span></li>
+    </ul>
+  </section>
+
+  <div class="foot">
+    <span>meribuilds · build brief</span>
+    <span>Tafadzwa Fira · CRM cleanup &amp; automation</span>
+    <span>v1 · Jul 7 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
