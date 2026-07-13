@@ -120,6 +120,8 @@ export const showCert = false
 export const about = {
   eyebrow: "About",
   title: "I fix the messes other people are too busy to touch.",
+  image: "/assets/about.jpeg",
+  imageAlt: "Tafadzwa Fira — CRM cleanup & automation specialist",
   body: [
     "I'm Tafadzwa. I clean up CRMs that have quietly turned into a mess — the duplicate contacts, the tags nobody trusts, the follow-ups that never fire.",
     "I've taken systems with thousands of contacts down to zero chaos, then built the automations that keep them that way. If your pipeline is leaking leads you already paid for, that's exactly the kind of project I like.",

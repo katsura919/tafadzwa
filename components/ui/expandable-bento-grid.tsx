@@ -127,29 +127,34 @@ export default function ExpandableBentoGrid({ items }: BentoGridProps) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="mx-auto grid w-full max-w-4xl grid-cols-1 items-start gap-3 md:grid-cols-2 lg:gap-4">
+      <ul className="mx-auto flex w-full max-w-3xl flex-wrap items-start justify-center gap-3 lg:gap-4">
         {items.map((item) => (
           <motion.div
             layoutId={`card-${item.title}-${id}`}
             key={item.id}
             onClick={() => setActive(item)}
-            className="flex cursor-pointer items-center gap-4 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-secondary"
+            className="group relative flex aspect-square w-[calc(50%-0.375rem)] cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border bg-card p-4 text-center transition-colors hover:border-primary/60 hover:bg-secondary sm:w-40 lg:w-44"
           >
+            {/* Hover hint */}
+            <span className="pointer-events-none absolute top-2.5 right-2.5 z-10 rounded-full bg-primary px-2 py-0.5 text-[10px] font-semibold tracking-wide text-primary-foreground opacity-0 translate-y-1 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
+              Click me
+            </span>
+
             <motion.div layoutId={`image-${item.title}-${id}`}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-wash p-1 text-primary">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-wash p-1 text-primary">
                 {item.icon}
               </div>
             </motion.div>
             <div className="min-w-0">
               <motion.h3
                 layoutId={`title-${item.title}-${id}`}
-                className="text-left font-medium text-foreground"
+                className="text-sm font-medium text-foreground"
               >
                 {item.title}
               </motion.h3>
               <motion.p
                 layoutId={`description-${item.title}-${id}`}
-                className="text-left text-xs text-muted-foreground md:text-[13px]"
+                className="mt-1 text-xs text-muted-foreground"
               >
                 {item.subtitle}
               </motion.p>

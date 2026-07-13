@@ -22,7 +22,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onThemeChange={(t) => setTheme(t)}
       aria-label="Toggle theme"
       className={cn(
-        "grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full border border-border bg-transparent text-foreground transition-colors duration-200 hover:border-primary/50 hover:text-primary [&_svg]:h-4 [&_svg]:w-4",
+        "grid bg-background h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full border border-border text-foreground transition-colors duration-200 hover:border-primary/50 hover:text-primary [&_svg]:h-4 [&_svg]:w-4",
         className
       )}
     />

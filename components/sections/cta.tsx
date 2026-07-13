@@ -7,10 +7,7 @@ export function Cta() {
     <section className="mx-auto max-w-6xl px-4 py-24 md:py-28">
       <Reveal>
         <div className="relative flex flex-col items-center overflow-hidden rounded-3xl border border-border bg-card px-6 py-20 text-center md:px-16 md:py-24">
-          <div
-            aria-hidden
-            className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
-          />
+
           <div className="relative z-10 flex flex-col items-center">
             <h2 className="max-w-2xl font-heading text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
               {finalCta.title}
