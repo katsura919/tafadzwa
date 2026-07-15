@@ -55,7 +55,7 @@ export function SiteNav() {
             <AnimatedButton
               as="a"
               href={bookingHref}
-              className="hidden cursor-pointer rounded-full border-transparent bg-primary px-5 py-2 text-sm text-primary-foreground no-underline [--shine:rgba(255,255,255,.7)] hover:bg-primary/90 md:inline-flex"
+              className="hidden cursor-pointer rounded-full border-transparent bg-primary px-5 py-2 text-sm text-primary-foreground no-underline transition-colors [--shine:rgba(255,255,255,.7)] hover:bg-gold hover:text-gold-foreground md:inline-flex"
             >
               Book a call
             </AnimatedButton>
@@ -66,7 +66,7 @@ export function SiteNav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="grid h-9 w-9 place-items-center rounded-full border border-border text-foreground transition-colors hover:border-primary/50 hover:text-primary md:hidden"
+              className="grid h-9 w-9 place-items-center rounded-full border border-border text-foreground transition-colors hover:border-primary/50 hover:text-primary-ink md:hidden"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
@@ -101,14 +101,14 @@ export function SiteNav() {
                   as="a"
                   href={bookingHref}
                   onClick={() => setOpen(false)}
-                  className="w-full cursor-pointer justify-center rounded-full border-transparent bg-primary px-5 py-2.5 text-sm text-primary-foreground no-underline [--shine:rgba(255,255,255,.7)] hover:bg-primary/90"
+                  className="w-full cursor-pointer justify-center rounded-full border-transparent bg-primary px-5 py-2.5 text-sm text-primary-foreground no-underline transition-colors [--shine:rgba(255,255,255,.7)] hover:bg-gold hover:text-gold-foreground"
                 >
                   Book a call
                 </AnimatedButton>
                 <a
                   href={emailHref}
                   onClick={() => setOpen(false)}
-                  className="rounded-full border border-border px-5 py-2.5 text-center text-sm font-medium text-foreground transition-colors hover:border-primary/50"
+                  className="rounded-full border border-border px-5 py-2.5 text-center text-sm font-medium text-foreground transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground"
                 >
                   Email me
                 </a>

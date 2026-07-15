@@ -30,7 +30,7 @@ export function Footer() {
           <div>
             <div className="font-heading text-2xl font-bold tracking-tight">{site.name}</div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              {site.role} for coaches, consultants, and founders — so no lead slips through the
+              {site.role} for coaches, consultants, and founders, so no lead slips through the
               cracks.
             </p>
             <div className="mt-5 flex items-center gap-2">
@@ -39,7 +39,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary-ink"
               >
                 <LinkedinIcon />
               </a>
@@ -48,14 +48,14 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary-ink"
               >
                 <FacebookIcon />
               </a>
               <a
                 href={emailHref}
                 aria-label="Email"
-                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary-ink"
               >
                 <Mail className="h-4 w-4" />
               </a>
@@ -72,7 +72,7 @@ export function Footer() {
                 <li key={n.href}>
                   <a
                     href={n.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary-ink"
                   >
                     {n.label}
                   </a>
@@ -81,7 +81,7 @@ export function Footer() {
               <li>
                 <a
                   href={bookingHref}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary-ink"
                 >
                   Book a call
                 </a>
@@ -99,7 +99,7 @@ export function Footer() {
                 <li key={s.title}>
                   <a
                     href="#services"
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary-ink"
                   >
                     {s.title}
                   </a>
@@ -119,7 +119,7 @@ export function Footer() {
 
             <a
               href={emailHref}
-              className="mt-4 inline-block text-sm font-medium text-foreground transition-colors hover:text-primary"
+              className="mt-4 inline-block text-sm font-medium text-foreground transition-colors hover:text-primary-ink"
             >
               {site.email}
             </a>
@@ -135,7 +135,7 @@ export function Footer() {
 
             <a
               href="#top"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-primary-ink"
             >
               Back to top
               <ArrowUp className="h-3.5 w-3.5" />

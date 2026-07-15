@@ -23,7 +23,7 @@ export const emailHref = `mailto:${site.email}`
 // Primary CTA target. Falls back to email until a booking link exists.
 export const bookingHref =
   site.bookingUrl ??
-  `mailto:${site.email}?subject=${encodeURIComponent("Book a call — CRM cleanup & automation")}`
+  `mailto:${site.email}?subject=${encodeURIComponent("Book a call, CRM cleanup & automation")}`
 
 export const nav = [
   { label: "Services", href: "#services" },
@@ -50,7 +50,7 @@ export const receipts: Receipt[] = [
 export const problem = {
   eyebrow: "The problem",
   title: "Your CRM was supposed to help. Now it's the thing you avoid.",
-  body: "You built it yourself, or handed it to a cheap one-off freelancer, or followed a template. It worked for a week. Then it never got finished — and every unworked lead is a client you already paid to reach.",
+  body: "You built it yourself, or handed it to a cheap one-off freelancer, or followed a template. It worked for a week. Then it never got finished, and every unworked lead is a client you already paid to reach.",
   quotes: [
     "These people are in limbo until I can figure it out.",
     "I'm about to launch a media campaign and need email capture and automation handled.",
@@ -65,7 +65,7 @@ export const services: Service[] = [
     n: "01",
     kind: "One-off",
     title: "CRM Audit & Cleanup",
-    blurb: "Find what's broken — dedupe, tag consistency, and data hygiene across every contact.",
+    blurb: "Find what's broken: dedupe, tag consistency, and data hygiene across every contact.",
   },
   {
     n: "02",
@@ -83,7 +83,7 @@ export const services: Service[] = [
     n: "04",
     kind: "Retainer",
     title: "Ongoing CRM Management",
-    blurb: "The 'run it' option — CRM inbox management, calendar and booking setup, kept clean month to month.",
+    blurb: "The 'run it' option, CRM inbox management, calendar and booking setup, kept clean month to month.",
   },
 ]
 
@@ -98,20 +98,19 @@ export const included = [
 ]
 
 export const outcomes = [
-  "See every lead and contact in one clean system — no duplicates, no missing data.",
+  "See every lead and contact in one clean system, no duplicates, no missing data.",
   "Trust that follow-ups happen automatically, so no lead falls through.",
   "Know exactly where every prospect stands in the pipeline, at a glance.",
   "Spend less time on manual admin.",
   "Scale outreach and bookings with confidence.",
 ]
 
-// OPEN ITEM (brief §07): only VA-era testimonials exist. Reframed around
-// reliability & follow-through until CRM-specific ones come in. Swap freely.
+// OPEN ITEM (brief §07): CRM-specific testimonials are being collected.
+// Swap the quote and attribution when they arrive.
 export const testimonial = {
   quote:
-    "Tafadzwa is the most reliable person I've worked with. She follows through on everything — nothing slips, and our systems have never been this organized.",
+    "Tafadzwa is the most reliable person I've worked with. She follows through on everything, nothing slips, and our systems have never been this organized.",
   attribution: "Past client",
-  note: "Reframed from a prior engagement · CRM-specific reviews coming",
 }
 
 // OPEN ITEM (brief §07): certificate to arrive by email. Flip to true once received.
@@ -121,9 +120,9 @@ export const about = {
   eyebrow: "About",
   title: "I fix the messes other people are too busy to touch.",
   image: "/assets/about.jpeg",
-  imageAlt: "Tafadzwa Fira — CRM cleanup & automation specialist",
+  imageAlt: "Tafadzwa Fira, CRM cleanup & automation specialist",
   body: [
-    "I'm Tafadzwa. I clean up CRMs that have quietly turned into a mess — the duplicate contacts, the tags nobody trusts, the follow-ups that never fire.",
+    "I'm Tafadzwa. I clean up CRMs that have quietly turned into a mess, the duplicate contacts, the tags nobody trusts, the follow-ups that never fire.",
     "I've taken systems with thousands of contacts down to zero chaos, then built the automations that keep them that way. If your pipeline is leaking leads you already paid for, that's exactly the kind of project I like.",
   ],
 }

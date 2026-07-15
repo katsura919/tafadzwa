@@ -20,7 +20,7 @@ function Detail({ intro, points }: { intro: string; points: string[] }) {
       <ul className="flex flex-col gap-2">
         {points.map((p) => (
           <li key={p} className="flex gap-2">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-ink" />
             <span>{p}</span>
           </li>
         ))}
@@ -38,10 +38,10 @@ const items = [
     description: "A full teardown of your current setup before we touch anything.",
     content: (
       <Detail
-        intro="Before any cleanup, I go through your CRM the way a mechanic goes through an engine — every contact, tag, pipeline, and integration gets checked."
+        intro="Before any cleanup, I go through your CRM the way a mechanic goes through an engine, every contact, tag, pipeline, and integration gets checked."
         points={[
           "Review of contacts, custom fields, tags, and pipeline stages",
-          "Check which automations are firing — and which quietly died",
+          "Check which automations are firing, and which quietly died",
           "Spot duplicate records, bad data, and broken integrations",
           "You get a plain-English findings doc, not a pile of jargon",
         ]}
@@ -56,7 +56,7 @@ const items = [
     description: "Every contact deduped, corrected, and consistently tagged.",
     content: (
       <Detail
-        intro="This is the part clients feel the most. Messy data makes every follow-up a guess — clean data makes the whole system trustworthy again."
+        intro="This is the part clients feel the most. Messy data makes every follow-up a guess, clean data makes the whole system trustworthy again."
         points={[
           "Merge duplicate contacts without losing history",
           "Remove or flag bad and bounced email addresses",
@@ -74,7 +74,7 @@ const items = [
     description: "Pipelines, fields, and stages built to match how you actually sell.",
     content: (
       <Detail
-        intro="Whether it's a fresh build or a rescue, the system gets structured around your real sales process — not a generic template."
+        intro="Whether it's a fresh build or a rescue, the system gets structured around your real sales process, not a generic template."
         points={[
           "Pipeline stages that mirror how leads actually move",
           "Contact fields that capture what you need, nothing you don't",
@@ -131,7 +131,7 @@ const items = [
         intro="You shouldn't need a data analyst to know how your pipeline is doing. Clear dashboards, no clutter."
         points={[
           "Lead volume and where they're coming from",
-          "Pipeline health — what's moving, what's stuck",
+          "Pipeline health: what's moving, what's stuck",
           "Follow-up and booking rates at a glance",
           "Built to answer the questions you actually ask",
         ]}

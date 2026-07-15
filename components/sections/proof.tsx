@@ -22,9 +22,9 @@ export function Proof() {
         <Reveal delay={0.05}>
           <figure className="flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-8 shadow-[0_2px_4px_rgba(27,22,38,.04)] md:p-10">
             <div>
-              <div className="mb-5 flex gap-1 text-primary">
+              <div className="mb-5 flex gap-1 text-gold-ink">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
+                  <Star key={i} className="h-5 w-5 fill-current" />
                 ))}
               </div>
               <blockquote className="font-heading text-2xl leading-[1.3] font-semibold tracking-tight text-foreground md:text-3xl">
@@ -32,14 +32,11 @@ export function Proof() {
               </blockquote>
             </div>
             <figcaption className="mt-8 flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-wash text-sm font-bold text-primary">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-gold text-sm font-bold text-gold-foreground">
                 TF
               </span>
-              <span>
-                <span className="block text-sm font-semibold text-foreground">
-                  {testimonial.attribution}
-                </span>
-                <span className="block text-xs text-muted-foreground">{testimonial.note}</span>
+              <span className="text-sm font-semibold text-foreground">
+                {testimonial.attribution}
               </span>
             </figcaption>
           </figure>
@@ -47,10 +44,10 @@ export function Proof() {
 
         <Reveal delay={0.12}>
           <div className="flex h-full flex-col gap-4">
-            <div className="flex flex-1 flex-col justify-center rounded-3xl border border-border bg-wash p-7">
-              <span className="font-heading text-5xl font-bold tracking-tight text-primary">935</span>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                contacts cleaned in one recent GoHighLevel build — 312 duplicates gone, zero bad
+            <div className="flex flex-1 flex-col justify-center rounded-3xl border border-primary bg-primary p-7">
+              <span className="font-heading text-5xl font-bold tracking-tight text-white">935</span>
+              <p className="mt-3 text-sm leading-relaxed text-white">
+                contacts cleaned in one recent GoHighLevel build, 312 duplicates gone, zero bad
                 emails, 100% tag consistency.
               </p>
             </div>

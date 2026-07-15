@@ -9,10 +9,10 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground shadow-[0_10px_30px_-8px_rgba(109,40,217,0.5)] hover:-translate-y-0.5 hover:bg-primary/90",
+    "bg-primary text-primary-foreground shadow-[0_10px_30px_-8px_rgba(139,92,246,0.55)] hover:-translate-y-0.5 hover:bg-gold hover:text-gold-foreground hover:shadow-[0_10px_30px_-8px_rgba(251,191,36,0.65)]",
   secondary:
-    "border border-border bg-card text-foreground hover:-translate-y-0.5 hover:border-primary/50",
-  ghost: "text-muted-foreground hover:text-primary",
+    "border border-border bg-card text-foreground hover:-translate-y-0.5 hover:border-gold hover:bg-gold/10",
+  ghost: "text-muted-foreground hover:text-primary-ink",
 }
 
 type ButtonLinkProps = {

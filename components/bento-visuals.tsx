@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { Bell, CheckCircle2, GitMerge, Mail, RefreshCw, Tag, Users, Zap } from "lucide-react"
 
 const dotBg = {
-  backgroundImage: "radial-gradient(rgba(109,40,217,0.14) 1px, transparent 1px)",
+  backgroundImage: "radial-gradient(rgba(139,92,246,0.16) 1px, transparent 1px)",
   backgroundSize: "22px 22px",
 }
 
@@ -49,11 +49,11 @@ export const CleanupVisual = () => {
               key={i}
               className="flex items-center gap-3 rounded-xl border border-border bg-card px-3 py-2.5 shadow-sm"
             >
-              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-wash text-[11px] font-semibold text-primary">
+              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-wash text-[11px] font-semibold text-primary-ink">
                 {r.initials}
               </span>
               <span className="text-[13px] font-medium text-foreground">{r.name}</span>
-              <span className="ml-auto rounded-full bg-wash px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary">
+              <span className="ml-auto rounded-full bg-wash px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary-ink">
                 {r.tag}
               </span>
             </div>
@@ -90,7 +90,7 @@ export const BuildVisual = () => {
             <p className="text-[11px] font-medium text-muted-foreground">Contacts.crm</p>
             <p className="font-heading text-base font-bold text-foreground">Pipeline</p>
           </div>
-          <span className="rounded-full bg-wash px-2 py-0.5 text-[10px] font-semibold text-primary">
+          <span className="rounded-full bg-wash px-2 py-0.5 text-[10px] font-semibold text-primary-ink">
             GoHighLevel
           </span>
         </div>

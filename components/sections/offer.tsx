@@ -48,7 +48,7 @@ export function Offer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 max-w-xl text-lg text-muted-foreground"
           >
-            Pricing depends on the mess. Book a call and we&apos;ll scope it together — no numbers
+            Pricing depends on the mess. Book a call and we&apos;ll scope it together, no numbers
             guessed in the dark.
           </motion.p>
         </div>

@@ -20,6 +20,8 @@ export interface StackedLogosProps {
   stagger?: number;
   /** Width of each logo container. Default: "200px" */
   logoWidth?: string;
+  /** Utility class for the grid separator lines. Default: "bg-border" */
+  lineClassName?: string;
   /** Additional CSS classes */
   className?: string;
 }
@@ -35,6 +37,7 @@ export const StackedLogos = ({
   duration = 30,
   stagger = 0,
   logoWidth = "200px",
+  lineClassName = "bg-border",
   className,
 }: StackedLogosProps) => {
   const itemCount = logoGroups[0]?.length || 0;
@@ -133,11 +136,11 @@ export const StackedLogos = ({
             }
           >
             {/* Base border lines - gray */}
-            <div className="absolute top-0 bottom-0 right-0 w-px bg-border" />
-            <div className="absolute left-0 right-0 bottom-0 h-px bg-border" />
-            <div className="absolute left-0 right-0 top-0 h-px bg-border" />
+            <div className={cn("absolute top-0 bottom-0 right-0 w-px", lineClassName)} />
+            <div className={cn("absolute left-0 right-0 bottom-0 h-px", lineClassName)} />
+            <div className={cn("absolute left-0 right-0 top-0 h-px", lineClassName)} />
             {groupIndex === 0 && (
-              <div className="absolute top-0 bottom-0 left-0 w-px bg-border" />
+              <div className={cn("absolute top-0 bottom-0 left-0 w-px", lineClassName)} />
             )}
 
             {/* Stacked logos */}

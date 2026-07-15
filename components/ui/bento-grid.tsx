@@ -44,7 +44,7 @@ const BentoCard = ({
     className={cn(
       "group relative flex flex-col justify-end overflow-hidden rounded-3xl",
       "bg-card [box-shadow:0_0_0_1px_rgba(27,22,38,.04),0_2px_4px_rgba(27,22,38,.04),0_12px_24px_rgba(27,22,38,.05)]",
-      "border border-dashed border-border transition-shadow duration-300 hover:[box-shadow:0_0_0_1px_rgba(109,40,217,.12),0_18px_40px_-12px_rgba(109,40,217,.18)]",
+      "border border-dashed border-border transition-shadow duration-300 hover:[box-shadow:0_0_0_1px_rgba(139,92,246,.16),0_18px_40px_-12px_rgba(139,92,246,.24)]",
       className
     )}
     {...props}
@@ -57,7 +57,7 @@ const BentoCard = ({
 
     <div className="pointer-events-none z-10 flex flex-col gap-1 p-8 pt-0 transition-all duration-300 group-hover:-translate-y-10">
       {kicker && (
-        <span className="mb-2 font-mono text-[11px] font-medium tracking-[0.14em] text-primary uppercase">
+        <span className="mb-2 font-mono text-[11px] font-medium tracking-[0.14em] text-primary-ink uppercase">
           {kicker}
         </span>
       )}
@@ -70,7 +70,7 @@ const BentoCard = ({
     <div className="pointer-events-none absolute bottom-0 z-20 flex w-full translate-y-10 transform-gpu flex-row items-center p-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
       <a
         href={href}
-        className="pointer-events-auto inline-flex items-center gap-2 text-sm font-bold text-primary"
+        className="pointer-events-auto inline-flex items-center gap-2 text-sm font-bold text-primary-ink"
       >
         {cta}
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

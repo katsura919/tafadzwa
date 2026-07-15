@@ -21,9 +21,9 @@ const fontHeading = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Tafadzwa Fira — CRM cleanup & automation for coaches & founders",
+  title: "Tafadzwa Fira, CRM cleanup & automation for coaches & founders",
   description:
-    "Your leads are slipping through the cracks. I build the CRM that catches them — audits, clean builds, and automation for coaches, consultants, and service-based founders.",
+    "Your leads are slipping through the cracks. I build the CRM that catches them, audits, clean builds, and automation for coaches, consultants, and service-based founders.",
 }
 
 export default function RootLayout({

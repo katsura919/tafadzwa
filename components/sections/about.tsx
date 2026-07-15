@@ -53,7 +53,7 @@ export function About() {
                   href={site.socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground"
                 >
                   LinkedIn
                 </a>
@@ -61,7 +61,7 @@ export function About() {
                   href={site.socials.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-gold hover:bg-gold hover:text-gold-foreground"
                 >
                   Facebook
                 </a>

@@ -9,7 +9,7 @@ import { ButtonLink } from "@/components/ui/button-link"
 const activity = [
   { icon: GitMerge, text: "312 duplicates merged", tag: "Cleanup", tone: "violet" },
   { icon: Mail, text: "Follow-up sent to 40 leads", tag: "Auto", tone: "violet" },
-  { icon: CalendarCheck, text: "New call booked — Priya N.", tag: "Booked", tone: "ok" },
+  { icon: CalendarCheck, text: "New call booked, Priya N.", tag: "Booked", tone: "ok" },
   { icon: Tag, text: "Contacts tagged & sorted", tag: "Tidy", tone: "violet" },
 ]
 
@@ -51,7 +51,7 @@ export function Hero() {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute -bottom-1 left-0 h-[3px] w-full origin-left rounded-full bg-primary/40"
+                  className="absolute -bottom-1 left-0 h-[4px] w-full origin-left rounded-full bg-gold"
                 />
               </span>{" "}
               through the cracks.
@@ -108,7 +108,7 @@ export function Hero() {
             <ul className="space-y-2">
               {activity.map((a, i) => {
                 const Icon = a.icon
-                const tone = a.tone === "ok" ? "bg-ok/10 text-ok" : "bg-wash text-primary"
+                const tone = a.tone === "ok" ? "bg-ok/10 text-ok" : "bg-wash text-primary-ink"
                 return (
                   <motion.li
                     key={i}
@@ -154,9 +154,9 @@ export function Hero() {
           </motion.div>
 
           {/* floating chips — desktop only to avoid mobile overflow */}
-          <div className=" absolute -top-5 -left-6 hidden items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 shadow-lg sm:flex">
-            <span className="font-heading text-base font-bold text-primary">100%</span>
-            <span className="text-xs font-medium text-foreground">tag consistency</span>
+          <div className=" absolute -top-5 -left-6 hidden items-center gap-2 rounded-full border border-gold bg-gold px-3.5 py-2 shadow-lg sm:flex">
+            <span className="font-heading text-base font-bold text-gold-foreground">100%</span>
+            <span className="text-xs font-medium text-gold-foreground/80">tag consistency</span>
           </div>
           <div
             className=" absolute -right-5 -bottom-5 hidden items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 shadow-lg sm:flex"

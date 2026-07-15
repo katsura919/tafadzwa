@@ -18,7 +18,7 @@ export function Cta() {
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <ButtonLink
                 href={bookingHref}
-                className="bg-white text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] hover:bg-white/90"
+                className="bg-gold text-gold-foreground shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] hover:bg-white hover:text-[#7c3aed]"
               >
                 Book a call
               </ButtonLink>
@@ -26,7 +26,7 @@ export function Cta() {
                 href={emailHref}
                 variant="secondary"
                 withArrow={false}
-                className="border-white/30 bg-transparent text-primary-foreground hover:border-white/60 hover:bg-white/10"
+                className="border-white/30 bg-transparent text-primary-foreground hover:border-gold hover:bg-white/10"
               >
                 Email me
               </ButtonLink>
